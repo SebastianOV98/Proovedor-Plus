@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>BlackDecker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--NAV BAR-->
+  <ion-toolbar class="innerToolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()"><i class="fa-solid fa-house-chimney"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-cart-shopping"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-user-tie"></i></ion-button>
+    </ion-buttons>
+
+    <ion-title slot="start">ProveedorPlus </ion-title>
+  </ion-toolbar>
+  <!--NAV BAR-->
+
+  <ion-item>
+    <ion-label>
+      <h2>Lo mejor de la marca</h2>
+    </ion-label>
+  </ion-item>
+  <p>
+    La <b>iconica BLACK+DECKER,</b> Diseñamos productos para cada espacio del lugar donde vives para que con tus ideas e
+    inspiración lo conviertas en el hogar de tus sueños.
+  </p>
+
+  <ion-slides>
+    <ion-slide *ngFor="let black of listaBlack; let i = index">
+      <div class="slide">
+        <img [src]="black.imagenUrl" />
+        <h2>{{black.Nombre  | json }}</h2>
+        <p>
+          {{black.Descripcion  | json }}
+        </p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bosch</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--NAV BAR-->
+  <ion-toolbar class="innerToolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()"><i class="fa-solid fa-house-chimney"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-cart-shopping"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-user-tie"></i></ion-button>
+    </ion-buttons>
+
+    <ion-title slot="start">ProveedorPlus </ion-title>
+  </ion-toolbar>
+  <!--NAV BAR-->
+
+  <ion-item>
+    <ion-label>
+      <h2>Lo mejor de la marca</h2>
+    </ion-label>
+  </ion-item>
+  <p>
+    Hoy en día  <b>el grupo Bosch en Colombia</b> cuenta con 128 empleados y un amplio portafolio de productos que incluyen
+    herramientas para el hogar y la industria, calentadores a gas y equipos de seguridad. 
+  </p>
+
+  <ion-slides>
+    <ion-slide *ngFor="let bosch of listaBosch; let i = index">
+      <div class="slide">
+        <img [src]="bosch.imagenUrl" />
+        <h2>{{bosch.Nombre  | json }}</h2>
+        <p>
+          {{bosch.Descripcion  | json }}
+        </p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

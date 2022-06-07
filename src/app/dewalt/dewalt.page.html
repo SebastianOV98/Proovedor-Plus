@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>DeWALT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--NAV BAR-->
+  <ion-toolbar class="innerToolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()"><i class="fa-solid fa-house-chimney"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-cart-shopping"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-user-tie"></i></ion-button>
+    </ion-buttons>
+
+    <ion-title slot="start">ProveedorPlus </ion-title>
+  </ion-toolbar>
+  <!--NAV BAR-->
+
+  <ion-item>
+    <ion-label>
+      <h2>Lo mejor de la marca</h2>
+    </ion-label>
+  </ion-item>
+  <p>
+    En <b>DeWALT</b> estamos obsesionados con las necesidades reales de nuestros usuarios en el día a día, hazlo una vez y hazlo bien hecho,
+     con cada tornillo, tuerca, clavo y junta. Ponemos pasión y sudor en cada trabajo, mientras ayudamos a construir una comunidad más 
+     fuerte y un mejor futuro para todos.
+  </p>
+
+  <ion-slides>
+    <ion-slide *ngFor="let DeWALT of listaDewalt; let i = index">
+      <div class="slide">
+        <img [src]="DeWALT.imagenUrl" />
+        <h2>{{DeWALT.Nombre  | json }}</h2>
+        <p>
+          {{DeWALT.Descripcion  | json }}
+        </p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!--NAV BAR-->  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()"><i class="fa-solid fa-house-chimney"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-cart-shopping"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-user-tie"></i></ion-button>
+    </ion-buttons>
+
+    <ion-title slot="start">ProveedorPlus </ion-title>
+  </ion-toolbar>
+  <!--NAV BAR-->
+  
+  <!--CARD--> 
+  <ion-card>
+    <ion-card-content>
+
+      <ion-card *ngFor="let producto of productos; let i = index" class="innerCard" (click)="martillos(i)">
+        <img [src]=producto.imagenUrl (click)="martillos(i)"/>
+        <ion-card-header>
+          <ion-card-subtitle key=""> {{producto.tipo}} </ion-card-subtitle>
+          <ion-card-title> {{producto.nombre}} </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+    </ion-card-content>
+  </ion-card>
+  <!--CARD-->
+
+</ion-content>

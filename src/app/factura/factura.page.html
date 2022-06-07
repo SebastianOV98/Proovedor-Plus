@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Factura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+   <!--NAV BAR-->  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()"><i class="fa-solid fa-house-chimney"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-cart-shopping"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-user-tie"></i></ion-button>
+    </ion-buttons>
+
+    <ion-title slot="start">ProveedorPlus </ion-title>
+  </ion-toolbar>
+  <!--NAV BAR-->
+
+  <ion-card>
+  
+    <ion-item>
+      <ion-label position="fixed" class="formatoLabel"><b>Nombre:</b></ion-label>
+      <ion-input disabled>{{nombre}}</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="fixed" class="formatoLabel"><b>Precio:</b></ion-label>
+      <ion-input disabled>{{precio}}</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="fixed" class="formatoLabel"><b>Direccion:</b></ion-label>
+      <ion-input [(ngModel)]="datos.direccion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="fixed" class="formatoLabel"><b>Telefono:</b></ion-label>
+      <ion-input [(ngModel)]="datos.telefono"></ion-input>
+    </ion-item>
+
+    <ion-list style="margin-top: 20px;" >
+      <ion-label class="labelList">Medio de pago</ion-label>
+      <ion-select multiple="true" cancelText="cancelar" onText="Aceptar" [(ngModel)]="datos.medioPago">
+        <ion-select-option value="PSE">PSE</ion-select-option>
+        <ion-select-option value="Tarjeta">Tarjeta debito o credito</ion-select-option>
+        <ion-select-option value="Contra entrega">Pago contra entrega</ion-select-option>
+      </ion-select>
+    </ion-list>
+
+    <ion-item>
+      <ion-label class="formatoLabel">Entrega expres</ion-label>
+      <ion-toggle color="tertiary" value="foo" checked="true"  [(ngModel)]="datos.entregaExpres"></ion-toggle>
+    </ion-item>
+
+    <ion-button class="pagar" color="success" (click)="crearFactura()">
+      Pagar
+      <ion-icon name="checkbox-outline"></ion-icon>
+    </ion-button>
+
+  </ion-card>
+
+  <!--<ion-content>
+    <ion-button block (click)="showToasWithCloseButton()">Toast Cierra</ion-button>
+  <ion-content>-->
+  
+
+</ion-content>

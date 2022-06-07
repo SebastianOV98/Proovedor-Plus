@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Alicates</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--NAV BAR-->  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()"><i class="fa-solid fa-house-chimney"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-cart-shopping"></i></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><i class="fa-solid fa-user-tie"></i></ion-button>
+    </ion-buttons>
+
+    <ion-title slot="start">ProveedorPlus </ion-title>
+  </ion-toolbar>
+  <!--NAV BAR-->
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card
+        *ngFor="let alicate of listaAlicate; let i = index"
+        class="innerCard"
+        (click)="factura(i)"
+      >
+        <img [src]="alicate.imagenUrl" (click)="factura(i)" />
+        <ion-card-header>
+          <ion-card-subtitle key="">
+            {{alicate.marca | json }}
+          </ion-card-subtitle>
+          <ion-card-title> {{alicate.descripcion | json }} </ion-card-title>
+          <ion-card-subtitle key="">
+            {{alicate.precios | json }}
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

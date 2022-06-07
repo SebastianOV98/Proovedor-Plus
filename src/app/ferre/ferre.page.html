@@ -1,0 +1,127 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!--NAV BAR-->
+  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button> 
+        Direccion 
+        <br>
+        Cra 31#37-02
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button>  </ion-button>
+    </ion-buttons>
+
+    <ion-buttons class="car" slot="end">
+      <!--<img src="assets\img\tooLogo.png" alt="">-->
+      <ion-avatar (click)="perfil()">
+        <img [src]="profile.imageUrl" *ngIf="profile?.imageUrl; else placeholder_avatar;" class="profileImage">
+        <ng-template #placeholder_avatar>
+          <div class="fallback">
+            <p>select avatar</p>
+          </div>
+        </ng-template>
+      </ion-avatar>
+    </ion-buttons> 
+  </ion-toolbar>
+  <!--NAV BAR-->
+
+  <ion-grid>
+
+    <ion-item class="buscar">
+      <ion-label position="floating"> <i class="fa-solid fa-magnifying-glass" style="color: #BB86FC;"></i> Buscar </ion-label>
+      <ion-input  [(ngModel)]="email" placeholder="Buscar" type="text"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      
+      <ion-col size="6">
+        <ion-card class="Pedidos">
+          <i class="fa-solid fa-cart-arrow-down fa-5x"></i>
+          <ion-card-header>
+            <ion-card-subtitle><b>Productos Sugeridos</b></ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card class="Pedidos">
+          <i class="fa-solid fa-cart-plus fa-5x"></i>
+          <ion-card-header>
+            <ion-card-subtitle><b>Pedido Nuevo</b></ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid class="gridTres">
+    <ion-label position="floating" class="SecondGrid"> Nuestro Catologo </ion-label>
+    <ion-row>
+      
+      <ion-col size="4">
+        <ion-card class="Menu" (click)="listado()">
+          <i class="fa-solid fa-basket-shopping fa-2x"></i>
+          <ion-card-header>
+            <ion-card-subtitle><b>Categorias</b></ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-card class="Menu" (click)="Marcas()">
+          <i class="fa-solid fa-tag fa-2x" style="margin-left: 30%;"></i>
+          <ion-card-header>
+            <ion-card-subtitle><b>Marcas</b></ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-card class="Menu" (click)="Soluciones()">
+          <i class="fa-solid fa-puzzle-piece fa-2x" style="margin-left: 30%;"></i>
+          <ion-card-header>
+            <ion-card-subtitle><b>Soluciones</b></ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button style="margin: 10px;" (click)="logout()">
+        <i class="fa-solid fa-house-chimney fa-2x" style="color: #BB86FC;"></i>
+      </ion-button>
+      <ion-button style="margin: 10px;">
+        <i class="fa-solid fa-percent fa-2x" style="color: #BB86FC;"></i>
+      </ion-button>
+      <ion-button style="margin: 10px;">
+        <i class="fa-solid fa-magnifying-glass fa-2x" style="color: #BB86FC;"></i>
+      </ion-button>
+      <ion-button style="margin: 10px;">
+        <i class="fa-solid fa-info fa-2x" style="color: #BB86FC;"></i>
+      </ion-button>
+      <ion-button style="margin: 10px;">
+        <i class="fa-solid fa-cart-shopping fa-2x" style="color: #BB86FC;"></i>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

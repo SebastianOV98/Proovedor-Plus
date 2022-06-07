@@ -1,0 +1,41 @@
+ion-card{
+    --ion-background-color: #141414;
+   
+}
+
+ion-header{
+    --ion-background-color: #fff;
+}
+
+ion-toolbar{
+    --ion-background-color: #fff;
+    color: #141414;
+}
+
+ion-label{
+    font-weight: bold;
+}
+
+ion-label.formatoLabel{
+    color: #ffffff
+}
+
+ion-label.labelList{
+    margin-left: 5%;
+    color: #ffffff;
+}
+
+ion-input{
+    color: #fff;
+}
+ 
+ion-button.pagar{
+    vertical-align: bottom;
+    margin-left: 63%;
+    width: fit-content;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
